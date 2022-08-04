@@ -1,0 +1,13 @@
+ver1.0: 
+add tkinter helper can add line and save or load lines.
+basic game mechanic is ready.
+
+you can edit lines.
+if edit line with none character in input box will delete selected line.
+
+you can save your dialogue. and load the selected file.
+
+it will show what dialogue file using now.
+
+only space character in add line. or non select list using edit.
+will refresh lines list.
