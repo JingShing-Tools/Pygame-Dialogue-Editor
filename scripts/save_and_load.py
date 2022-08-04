@@ -18,7 +18,7 @@ def save_dialogue(path, lines):
 
 def load_dialogue(path):
     if path:
-        with open(path) as save_file:
+        with open(resource_path(path)) as save_file:
             lines = json.load(save_file)
             return lines
 
@@ -29,3 +29,10 @@ def found_save_or_not(level):
             level.has_save = True
     except:
         level.has_save = False
+
+def found_dialogue_or_not(file_name):
+    try:
+        with open(resource_path('dialogues/' + file_name)) as save_file:
+            return True
+    except:
+        return False

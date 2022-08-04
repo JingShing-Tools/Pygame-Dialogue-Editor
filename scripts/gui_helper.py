@@ -14,9 +14,13 @@ class Gui_helper:
         self.root.title('Line editor')
         self.root.geometry('380x300')
         # line list box
-        self.textlistbox = Listbox(self.root)
+        self.character_select = Combobox(self.root, width=10)
+        self.character_select.grid(column=0, row=0, sticky=N)
+        self.character_select['values'] = ['npc']
+        self.character_select.current(0)
+        self.textlistbox = Listbox(self.root, height=6)
         self.init_textlist()
-        self.textlistbox.grid(column=0, row=0, padx=10, rowspan=6, sticky=N+W)
+        self.textlistbox.grid(column=0, row=1, padx=10, rowspan=6, sticky=N+W)
         # line input
         self.linetext = Label(self.root,text='Input Line :')
         self.linetext.grid(column=1, row=0, sticky=N + W)
@@ -50,7 +54,7 @@ class Gui_helper:
         # image edit
         self.img_hint = Label(self.root, text='image select')
         self.img_hint.grid(column=0, row=6, sticky=S+W)
-        self.img_select_box = Combobox(self.root)
+        self.img_select_box = Combobox(self.root, width=10)
         self.img_select_box.grid(column=0, row=7, sticky=S+W)
         self.img_select_box['values'] = ['bg','player walk img', 'npc walk img', 'npc talk img']
         self.img_select_box.current(0)

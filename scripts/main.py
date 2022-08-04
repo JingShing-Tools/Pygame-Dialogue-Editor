@@ -54,14 +54,16 @@ class Game:
         pygame.quit()
         sys.exit()
 
+need_helper = True
 if __name__ == '__main__':
     game = Game()
-    from threading import Thread
-    from gui_helper import Gui_helper
-    def gui_run():
-        gui_help = Gui_helper(game)
-        gui_help.run()
-    thread1 = Thread(target=gui_run)
-    thread1.setDaemon(True)
-    thread1.start()
+    if need_helper:
+        from threading import Thread
+        from gui_helper import Gui_helper
+        def gui_run():
+            gui_help = Gui_helper(game)
+            gui_help.run()
+        thread1 = Thread(target=gui_run)
+        thread1.setDaemon(True)
+        thread1.start()
     game.run()

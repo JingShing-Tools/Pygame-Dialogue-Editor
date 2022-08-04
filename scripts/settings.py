@@ -45,9 +45,18 @@ BAR_COLOR = '#EEEEEE'
 BAR_COLOR_SELECTED = '#111111'
 UPGRADE_BG_COLOR_SELECTED = '#EEEEEE'
 
+from save_and_load import found_dialogue_or_not, load_dialogue
 # npc dialogue
-npc_lines_en = ['Just give up.', 'You can\'t go out there.', 'No chance.', 'We just stuck in here.']
-npc_lines_tch = ['放棄吧。', '你不可能出去的。', '沒有任何可能性。', '我們被困在這了。']
-npc_lines_sch = ['放弃吧。', '你不可能出去的。', '没有任何可能性。', '我们被困在这了。']
+# if had dialogue file then read it
+if found_dialogue_or_not('default.txt'):
+    npc_lines_en = load_dialogue('dialogues/default.txt')
+else:
+    npc_lines_en = ['Just give up.', 'You can\'t go out there.', 'No chance.', 'We just stuck in here.']
+
+if found_dialogue_or_not('default_tch.txt'):
+    npc_lines_tch = load_dialogue('dialogues/default_tch.txt')
+else:
+    npc_lines_tch = ['放棄吧。', '你不可能出去的。', '沒有任何可能性。', '我們被困在這了。']
+# npc_lines_sch = ['放弃吧。', '你不可能出去的。', '没有任何可能性。', '我们被困在这了。']
 
 npc_lines_all = npc_lines_en.copy()

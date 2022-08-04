@@ -179,14 +179,11 @@ class Npc(Entity):
 
     def language_change(self):
         if self.language == 'english':
-            # self.lines = npc_lines_en
             self.import_lines(npc_lines_en, npc_lines_all)
         elif self.language == 'tchinese':
-            # self.lines = npc_lines_tch
             self.import_lines(npc_lines_tch, npc_lines_all)
-        elif self.language == 'schinese':
-            # self.lines = npc_lines_sch
-            self.import_lines(npc_lines_sch, npc_lines_all)
+        # elif self.language == 'schinese':
+        #     self.import_lines(npc_lines_sch, npc_lines_all)
 
     def import_lines(self, send_list, get_list):
         get_list.clear()
